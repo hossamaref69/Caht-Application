@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="message"
+            type="com.example.cahtapplication.model.RoomMessage" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        >
+
+        <TextView
+            android:id="@+id/messageContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/send_message_background"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="18dp"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toTopOf="@id/dateMessage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="hello, my names is hossam"
+            android:text="@{message.content}"
+            />
+
+        <TextView
+            android:id="@+id/dateMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/messageContent"
+            app:layout_constraintTop_toBottomOf="@+id/messageContent"
+            tools:text="12/11/2024"
+            android:textColor="#282F39"
+            android:text="@{message.date.toString()}"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
